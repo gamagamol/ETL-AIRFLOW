@@ -1,0 +1,23 @@
+[2022-12-11T07:24:18.009+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-11T07:24:18.028+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-11T07:24:18.028+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T07:24:18.029+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2022-12-11T07:24:18.029+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T07:24:18.073+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-06 00:00:00+00:00
+[2022-12-11T07:24:18.077+0000] {standard_task_runner.py:55} INFO - Started process 443 to run task
+[2022-12-11T07:24:18.082+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'songs_dag', 'greet', 'scheduled__2022-12-06T00:00:00+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmp4u0yltcc']
+[2022-12-11T07:24:18.094+0000] {standard_task_runner.py:83} INFO - Job 90: Subtask greet
+[2022-12-11T07:24:18.460+0000] {task_command.py:389} INFO - Running <TaskInstance: songs_dag.greet scheduled__2022-12-06T00:00:00+00:00 [running]> on host 408fc7a72a43
+[2022-12-11T07:24:18.754+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=songs_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-06T00:00:00+00:00
+[2022-12-11T07:24:18.755+0000] {python.py:177} INFO - Done. Returned value was: Hello world
+[2022-12-11T07:24:18.838+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=songs_dag, task_id=greet, execution_date=20221206T000000, start_date=20221211T072418, end_date=20221211T072418
+[2022-12-11T07:24:18.952+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-12-11T07:24:18.989+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,26 @@
+[2022-12-11T11:54:47.449+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs_dag1.ReadData scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-11T11:54:47.461+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs_dag1.ReadData scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-11T11:54:47.462+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T11:54:47.463+0000] {taskinstance.py:1284} INFO - Starting attempt 6 of 6
+[2022-12-11T11:54:47.464+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T11:54:47.500+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): ReadData> on 2022-12-03 00:00:00+00:00
+[2022-12-11T11:54:47.511+0000] {standard_task_runner.py:55} INFO - Started process 2123 to run task
+[2022-12-11T11:54:47.519+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'songs_dag1', 'ReadData', 'scheduled__2022-12-03T00:00:00+00:00', '--job-id', '155', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmpz3nthz42']
+[2022-12-11T11:54:47.531+0000] {standard_task_runner.py:83} INFO - Job 155: Subtask ReadData
+[2022-12-11T11:54:47.655+0000] {task_command.py:389} INFO - Running <TaskInstance: songs_dag1.ReadData scheduled__2022-12-03T00:00:00+00:00 [running]> on host 3211e07a3388
+[2022-12-11T11:54:47.754+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=songs_dag1
+AIRFLOW_CTX_TASK_ID=ReadData
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-03T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=6
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-03T00:00:00+00:00
+[2022-12-11T11:54:57.679+0000] {local_task_job.py:224} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2022-12-11T11:54:57.684+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 2123. PIDs of all processes in the group: [2123]
+[2022-12-11T11:54:57.685+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 2123
+[2022-12-11T11:55:57.738+0000] {process_utils.py:147} WARNING - process psutil.Process(pid=2123, name='airflow task ru', status='sleeping', started='11:54:46') did not respond to SIGTERM. Trying SIGKILL
+[2022-12-11T11:55:57.748+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGKILL to group 2123
+[2022-12-11T11:55:57.804+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2123, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='11:54:46') (2123) terminated with exit code Negsignal.SIGKILL
+[2022-12-11T11:55:57.805+0000] {standard_task_runner.py:170} ERROR - Job 155 was killed before it finished (likely due to running out of memory)

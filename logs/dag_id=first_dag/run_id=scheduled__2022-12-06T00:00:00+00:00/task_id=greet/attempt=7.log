@@ -1,0 +1,36 @@
+[2022-12-07T11:32:41.595+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-07T11:32:41.615+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-07T11:32:41.616+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-07T11:32:41.616+0000] {taskinstance.py:1284} INFO - Starting attempt 7 of 12
+[2022-12-07T11:32:41.617+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-07T11:32:41.632+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-06 00:00:00+00:00
+[2022-12-07T11:32:41.641+0000] {standard_task_runner.py:55} INFO - Started process 32288 to run task
+[2022-12-07T11:32:41.647+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'greet', 'scheduled__2022-12-06T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmpcnfiq179']
+[2022-12-07T11:32:41.652+0000] {standard_task_runner.py:83} INFO - Job 18: Subtask greet
+[2022-12-07T11:32:41.758+0000] {task_command.py:389} INFO - Running <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [running]> on host 0d175b7fb514
+[2022-12-07T11:32:41.890+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=7
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-06T00:00:00+00:00
+[2022-12-07T11:32:41.902+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/song.py", line 21, in ReadData
+    database="chinhook"
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "***-postgres-1" (172.21.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[2022-12-07T11:32:41.929+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=first_dag, task_id=greet, execution_date=20221206T000000, start_date=20221207T113241, end_date=20221207T113241
+[2022-12-07T11:32:41.955+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 18 for task greet (connection to server at "***-postgres-1" (172.21.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+; 32288)
+[2022-12-07T11:32:41.984+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-07T11:32:42.014+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

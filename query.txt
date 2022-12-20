@@ -1,0 +1,36 @@
+-- QUERY TOTAL REVENUE PER ARTIST
+SELECT b.*,(
+select sum(Quantity*UnitPrice) from invoiceLine l where l.TrackId=b.TrackId group by TrackId=b.TrackId
+) as total_price  FROM (
+SELECT a.ArtistId ,a.Name as Artist_Name ,a2.AlbumId ,a2.Title,t.TrackId ,t.Name,il.InvoiceLineId ,i.InvoiceId ,i.InvoiceDate  FROM Artist a 
+left join Album a2 on a2.ArtistId =a.ArtistId 
+LEFT join Track t on t.AlbumId =a2.AlbumId 
+join InvoiceLine il on il.TrackId = t.TrackId 
+join Invoice i on i.InvoiceId =i.InvoiceId
+) b ORDER by b.ArtistId ASC 
+
+
+-- QUERY TRANSACTIONS
+SELECT a.ArtistId ,a.Name as Artist_Name ,a2.AlbumId ,a2.Title,t.TrackId ,t.Name,il.InvoiceLineId ,i.InvoiceId ,i.InvoiceDate  FROM Artist a 
+left join Album a2 on a2.ArtistId =a.ArtistId 
+LEFT join Track t on t.AlbumId =a2.AlbumId 
+join InvoiceLine il on il.TrackId = t.TrackId 
+join Invoice i on i.InvoiceId =i.InvoiceId 
+ORDER by a.ArtistId ASC 
+
+-- QUERY SONGS
+SELECT a.ArtistId ,a.Name as Artist_Name ,a2.AlbumId ,a2.Title,t.TrackId ,t.Name,t.UnitPrice,t.Bytes ,g.GenreId ,g.Name  FROM Artist a 
+left join Album a2 on a2.ArtistId =a.ArtistId 
+LEFT join Track t on t.AlbumId =a2.AlbumId 
+join Genre g on g.GenreId =t.GenreId 
+ORDER by a.ArtistId ASC 
+
+
+
+
+
+
+
+
+
+

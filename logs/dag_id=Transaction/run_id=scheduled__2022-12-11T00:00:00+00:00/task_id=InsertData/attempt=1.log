@@ -1,0 +1,48 @@
+[2022-12-12T15:45:14.194+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [queued]>
+[2022-12-12T15:45:14.246+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [queued]>
+[2022-12-12T15:45:14.247+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12T15:45:14.248+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2022-12-12T15:45:14.249+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12T15:45:14.301+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): InsertData> on 2022-12-11 00:00:00+00:00
+[2022-12-12T15:45:14.312+0000] {standard_task_runner.py:55} INFO - Started process 70578 to run task
+[2022-12-12T15:45:14.326+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Transaction', 'InsertData', 'scheduled__2022-12-11T00:00:00+00:00', '--job-id', '269', '--raw', '--subdir', 'DAGS_FOLDER/transaction.py', '--cfg-path', '/tmp/tmp4xp4ywqn']
+[2022-12-12T15:45:14.330+0000] {standard_task_runner.py:83} INFO - Job 269: Subtask InsertData
+[2022-12-12T15:45:14.813+0000] {task_command.py:389} INFO - Running <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [running]> on host 83e68f36074a
+[2022-12-12T15:45:15.604+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=Transaction
+AIRFLOW_CTX_TASK_ID=InsertData
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-11T00:00:00+00:00
+[2022-12-12T15:45:18.792+0000] {logging_mixin.py:137} INFO - success Inserting Data
+[2022-12-12T15:45:18.798+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-12-12T15:45:18.830+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=Transaction, task_id=InsertData, execution_date=20221211T000000, start_date=20221212T154514, end_date=20221212T154518
+[2022-12-12T15:45:18.901+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-12-12T15:45:18.971+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-12-12T16:06:41.441+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [queued]>
+[2022-12-12T16:06:41.673+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [queued]>
+[2022-12-12T16:06:41.683+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12T16:06:41.687+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2022-12-12T16:06:41.689+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12T16:06:42.027+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): InsertData> on 2022-12-11 00:00:00+00:00
+[2022-12-12T16:06:42.151+0000] {standard_task_runner.py:55} INFO - Started process 72656 to run task
+[2022-12-12T16:06:42.671+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Transaction', 'InsertData', 'scheduled__2022-12-11T00:00:00+00:00', '--job-id', '304', '--raw', '--subdir', 'DAGS_FOLDER/transaction.py', '--cfg-path', '/tmp/tmpym5_ipfu']
+[2022-12-12T16:06:42.825+0000] {standard_task_runner.py:83} INFO - Job 304: Subtask InsertData
+[2022-12-12T16:06:44.163+0000] {task_command.py:389} INFO - Running <TaskInstance: Transaction.InsertData scheduled__2022-12-11T00:00:00+00:00 [running]> on host 83e68f36074a
+[2022-12-12T16:06:45.784+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=Transaction
+AIRFLOW_CTX_TASK_ID=InsertData
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-11T00:00:00+00:00
+[2022-12-12T16:06:53.415+0000] {logging_mixin.py:137} INFO - success Inserting Data
+[2022-12-12T16:06:53.515+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-12-12T16:06:53.621+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=Transaction, task_id=InsertData, execution_date=20221211T000000, start_date=20221212T160641, end_date=20221212T160653
+[2022-12-12T16:06:53.890+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-12-12T16:06:54.880+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

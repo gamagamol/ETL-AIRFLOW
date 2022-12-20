@@ -1,0 +1,5 @@
+// web docker
+1.curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.5.0/docker-compose.yaml'
+2.CelleryExecutor > LocalExecutor
+3.Remove Redis and Flower 
+4.Example true > false

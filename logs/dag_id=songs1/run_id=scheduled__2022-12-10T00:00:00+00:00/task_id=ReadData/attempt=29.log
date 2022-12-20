@@ -1,0 +1,33 @@
+[2022-12-11T14:25:44.036+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs1.ReadData scheduled__2022-12-10T00:00:00+00:00 [queued]>
+[2022-12-11T14:25:44.059+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: songs1.ReadData scheduled__2022-12-10T00:00:00+00:00 [queued]>
+[2022-12-11T14:25:44.060+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T14:25:44.061+0000] {taskinstance.py:1284} INFO - Starting attempt 29 of 33
+[2022-12-11T14:25:44.062+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-11T14:25:44.075+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): ReadData> on 2022-12-10 00:00:00+00:00
+[2022-12-11T14:25:44.084+0000] {standard_task_runner.py:55} INFO - Started process 7699 to run task
+[2022-12-11T14:25:44.088+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'songs1', 'ReadData', 'scheduled__2022-12-10T00:00:00+00:00', '--job-id', '198', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmpc1ay7hms']
+[2022-12-11T14:25:44.099+0000] {standard_task_runner.py:83} INFO - Job 198: Subtask ReadData
+[2022-12-11T14:25:44.220+0000] {task_command.py:389} INFO - Running <TaskInstance: songs1.ReadData scheduled__2022-12-10T00:00:00+00:00 [running]> on host 83e68f36074a
+[2022-12-11T14:25:44.278+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=songs1
+AIRFLOW_CTX_TASK_ID=ReadData
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=29
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-10T00:00:00+00:00
+[2022-12-11T14:25:44.302+0000] {logging_mixin.py:137} INFO - {'artist_id': {1}, 'artist_name': 'AC/DC', 'album_id': 1, 'album_title': 'For Those About To Rock We Salute You', 'track_id': 6, 'track_name': 'Put The Finger On You', 'unit_price': Decimal('0.99'), 'bytes': 6713451, 'genre_id': 1, 'genre_name': 'Rock'}
+[2022-12-11T14:25:44.302+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/song.py", line 48, in ReadData
+    print(json.dumps(song,4))
+TypeError: dumps() takes 1 positional argument but 2 were given
+[2022-12-11T14:25:44.313+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=songs1, task_id=ReadData, execution_date=20221210T000000, start_date=20221211T142544, end_date=20221211T142544
+[2022-12-11T14:25:44.322+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 198 for task ReadData (dumps() takes 1 positional argument but 2 were given; 7699)
+[2022-12-11T14:25:44.350+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-11T14:25:44.366+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

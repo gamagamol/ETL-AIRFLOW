@@ -1,0 +1,36 @@
+[2022-12-07T11:52:47.488+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-07T11:52:47.498+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [queued]>
+[2022-12-07T11:52:47.499+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-07T11:52:47.499+0000] {taskinstance.py:1284} INFO - Starting attempt 18 of 21
+[2022-12-07T11:52:47.500+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-07T11:52:47.513+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-06 00:00:00+00:00
+[2022-12-07T11:52:47.522+0000] {standard_task_runner.py:55} INFO - Started process 33582 to run task
+[2022-12-07T11:52:47.529+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'greet', 'scheduled__2022-12-06T00:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmpt1k6b837']
+[2022-12-07T11:52:47.538+0000] {standard_task_runner.py:83} INFO - Job 29: Subtask greet
+[2022-12-07T11:52:47.684+0000] {task_command.py:389} INFO - Running <TaskInstance: first_dag.greet scheduled__2022-12-06T00:00:00+00:00 [running]> on host 0d175b7fb514
+[2022-12-07T11:52:47.777+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=18
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-06T00:00:00+00:00
+[2022-12-07T11:52:47.857+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/song.py", line 21, in ReadData
+    database="postgres"
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db-1" to address: Name or service not known
+
+[2022-12-07T11:52:47.879+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=first_dag, task_id=greet, execution_date=20221206T000000, start_date=20221207T115247, end_date=20221207T115247
+[2022-12-07T11:52:47.891+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 29 for task greet (could not translate host name "db-1" to address: Name or service not known
+; 33582)
+[2022-12-07T11:52:47.945+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-07T11:52:47.968+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

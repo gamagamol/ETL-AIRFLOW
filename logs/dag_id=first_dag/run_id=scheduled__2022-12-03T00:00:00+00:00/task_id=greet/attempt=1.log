@@ -1,0 +1,62 @@
+[2022-12-04T10:01:04.556+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-04T10:01:04.564+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-04T10:01:04.565+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-04T10:01:04.565+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2022-12-04T10:01:04.565+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-04T10:01:04.574+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-03 00:00:00+00:00
+[2022-12-04T10:01:04.580+0000] {standard_task_runner.py:55} INFO - Started process 8769 to run task
+[2022-12-04T10:01:04.585+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'greet', 'scheduled__2022-12-03T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/songs.py', '--cfg-path', '/tmp/tmps3ll9zr5']
+[2022-12-04T10:01:04.587+0000] {standard_task_runner.py:83} INFO - Job 7: Subtask greet
+[2022-12-04T10:01:04.658+0000] {task_command.py:389} INFO - Running <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [running]> on host 0d9ad98b0a1c
+[2022-12-04T10:01:04.751+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-03T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-03T00:00:00+00:00
+[2022-12-04T10:01:04.753+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/songs.py", line 22, in ReadSongs
+    database="chinhook"
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2022-12-04T10:01:04.767+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=first_dag, task_id=greet, execution_date=20221203T000000, start_date=20221204T100104, end_date=20221204T100104
+[2022-12-04T10:01:04.787+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 7 for task greet (connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 8769)
+[2022-12-04T10:01:04.839+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-04T10:01:04.865+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-12-05T04:19:35.686+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-05T04:19:35.696+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [queued]>
+[2022-12-05T04:19:35.696+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-05T04:19:35.697+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2022-12-05T04:19:35.697+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-05T04:19:35.708+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-03 00:00:00+00:00
+[2022-12-05T04:19:35.716+0000] {standard_task_runner.py:55} INFO - Started process 10233 to run task
+[2022-12-05T04:19:35.720+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'greet', 'scheduled__2022-12-03T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmp71cwt6a7']
+[2022-12-05T04:19:35.723+0000] {standard_task_runner.py:83} INFO - Job 5: Subtask greet
+[2022-12-05T04:19:35.789+0000] {task_command.py:389} INFO - Running <TaskInstance: first_dag.greet scheduled__2022-12-03T00:00:00+00:00 [running]> on host 0d175b7fb514
+[2022-12-05T04:19:35.860+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-03T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-03T00:00:00+00:00
+[2022-12-05T04:19:35.862+0000] {logging_mixin.py:137} INFO - hello
+[2022-12-05T04:19:35.862+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-12-05T04:19:35.871+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=greet, execution_date=20221203T000000, start_date=20221205T041935, end_date=20221205T041935
+[2022-12-05T04:19:35.892+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-12-05T04:19:35.906+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

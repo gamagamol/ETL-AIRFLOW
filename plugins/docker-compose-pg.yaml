@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=airflow
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+    ports:
+      - '5433:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./chinook.sql:/docker-entrypoint-initdb.d/chinook.sql
+volumes:
+  db:
+    driver: local

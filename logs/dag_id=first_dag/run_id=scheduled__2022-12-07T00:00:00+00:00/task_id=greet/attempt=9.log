@@ -1,0 +1,38 @@
+[2022-12-08T03:58:56.276+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-07T00:00:00+00:00 [queued]>
+[2022-12-08T03:58:56.284+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: first_dag.greet scheduled__2022-12-07T00:00:00+00:00 [queued]>
+[2022-12-08T03:58:56.284+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-08T03:58:56.284+0000] {taskinstance.py:1284} INFO - Starting attempt 9 of 14
+[2022-12-08T03:58:56.285+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-08T03:58:56.293+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): greet> on 2022-12-07 00:00:00+00:00
+[2022-12-08T03:58:56.297+0000] {standard_task_runner.py:55} INFO - Started process 2689 to run task
+[2022-12-08T03:58:56.300+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'greet', 'scheduled__2022-12-07T00:00:00+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/song.py', '--cfg-path', '/tmp/tmp_vgbhidj']
+[2022-12-08T03:58:56.304+0000] {standard_task_runner.py:83} INFO - Job 62: Subtask greet
+[2022-12-08T03:58:56.353+0000] {task_command.py:389} INFO - Running <TaskInstance: first_dag.greet scheduled__2022-12-07T00:00:00+00:00 [running]> on host d6a5ea0de8c8
+[2022-12-08T03:58:56.406+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Gama Ariefsadya
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-07T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=9
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-07T00:00:00+00:00
+[2022-12-08T03:58:56.408+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/song.py", line 21, in ReadData
+    database="postgres"
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2022-12-08T03:58:56.418+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=first_dag, task_id=greet, execution_date=20221207T000000, start_date=20221208T035856, end_date=20221208T035856
+[2022-12-08T03:58:56.427+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 62 for task greet (connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 2689)
+[2022-12-08T03:58:56.474+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-08T03:58:56.491+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
